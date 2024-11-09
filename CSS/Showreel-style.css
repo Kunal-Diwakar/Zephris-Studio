@@ -1,0 +1,152 @@
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #F6F4F4;
+    --secondary: #0a0a0a;
+    --alter: #cdea67;
+}
+
+.transition{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: var(--alter);
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+}
+
+.primary {
+    font-family: 'Clash Display', sans-serif;
+    font-family: 'Panchang', sans-serif;
+}
+
+.secodary {
+    font-family: 'Satoshi', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    color: var(--secondary);
+    font-size: calc(100vw / 1920 * 10);
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Navbar Styling */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    z-index: 10;
+}
+
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    pointer-events: all;
+}
+
+#logo {
+    font-family: 'Panchang', sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+/* Showreel CSS */
+#showreel {
+    height: 100vh;
+    width: 100%;
+    background-color: #111;
+    position: relative;
+    background-image: url("/Assets/Showreel/ZS-COVER.jpeg");
+    background-size: cover;
+    background-position: 50% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.showreel-center {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    padding: 1vw;
+    flex-direction: column;
+}
+
+.showreel-center .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.3vw;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.showreel-center .icon i {
+    color: #000;
+    font-size: 2.8vw;
+}
+
+.showreel-center h5 {
+    font-size: 0.8vw;
+    font-family: 'Satoshi', sans-serif;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50px;
+    padding: 12px 26px 10px 26px;
+    margin-top: 0.5vw;
+    font-weight: 700;
+    opacity: 0;
+    transition: all ease 0.5s;
+    transform: translateY(16%);
+    text-transform: uppercase;
+}
+
+.showreel-center:hover h5 {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+#showreel video {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    transform: scaleX(0.7) scaleY(0);
+    opacity: 0;
+    border-radius: 30px;
+    z-index: 99999;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: calc(100vw / 768 * 10);
+    }
+}
